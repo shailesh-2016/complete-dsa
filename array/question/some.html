@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <input type="text" placeholder="enter num" id="inpt" />
+      <button onclick="add()">submit</button>
+      <p id="result"></p>
+
+      <script>
+        function add() {
+          var input = document.getElementById("inpt").value;
+          var sum = input.split(" ").reduce(function (acc, curr) {
+
+            var curr = Number(curr)
+            return acc + curr;
+          }, 0);
+
+          // var sum = num.reduce(function (acc, curr) {
+          //   return acc + curr;
+          // }, 0);
+          console.log(sum);
+          // document.getElementById('result').innerHTML=' ' + sum;
+        }
+
+      </script>
+    </div>
+  </body>
+</html>

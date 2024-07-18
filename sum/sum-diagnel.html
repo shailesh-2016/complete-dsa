@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      
+      const arr = [
+        [1, 2, 3],
+        [4, 5, 6],
+        [7, 8, 9],
+      ];
+
+      var sum = 0;
+      for (i = 0; i < arr.length; i++) {
+        sum += arr[i][i];
+      }
+      console.log(sum);
+
+      //total sum
+
+      const arr2 = [
+        [1, 2, 3],
+        [4, 5, 6],
+        [7, 8, 9],
+      ];
+
+      var sum2 = 0;
+      for (i = 0; i < arr2.length; i++) {
+        for (j = 0; j < arr2[i].length; j++) {
+          sum2 += arr2[i][j];
+        }
+      }
+      console.log(sum2);
+
+      //sum part type matrix
+
+      var arr3 = [
+        [1, 1, 3],
+        [4, 4, 6],
+        [5, 8, 10],
+      ];
+     var sum = arr3.map((matrix) => {
+        return matrix.reduce((acc, curr) => {
+          return acc + curr;
+        },0);
+      });
+    console.log(sum)
+
+    </script>
+  </body>
+</html>

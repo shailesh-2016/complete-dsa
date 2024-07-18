@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      class node {
+        constructor(data) {
+          this.data = data;
+          this.next = null;
+        }
+      }
+
+      class linkedList {
+        constructor() {
+          this.head = null;
+        }
+
+        append(data) {
+          let newNode = new node(data);
+          if (this.head == null) {
+            this.head = newNode;
+          } else {
+            let current = this.head;
+            while (current.next !== null) {
+              current = current.next;
+            }
+            current.next = newNode;
+          }
+        }
+
+        //display data
+        display() {
+          let current = this.head;
+          console.log(current);
+
+          var result = "";
+          while (current != null) {
+            result += `${current.data}->`;
+            current = current.next;
+          }
+          console.log(`${result}null`);
+        }
+
+        //Remove data
+        remove(data) {
+          if (!this.head) {
+            console.log("linkedList empty");
+          }
+          if (this.head.data == data) {
+            this.head = this.head.next;
+          }
+          let current = this.head;
+
+          while (current.next.data !== data) {
+            current = current.next;
+          }
+          if (current.next) {
+            current.next = current.next.next;
+          }
+        }
+
+        //check data
+        checkData(data) {
+          let current = this.head;
+          while (current != null) {
+            if (current.data == data) {
+              return true;
+            }
+            current = current.next;
+          }
+          return false;
+        }
+      }
+
+      const nodeList = new linkedList();
+      nodeList.append(200);
+      nodeList.append(300);
+      nodeList.append(400);
+      nodeList.append(500);
+      nodeList.display();
+
+      nodeList.remove(400);
+      nodeList.display();
+
+      nodeList.checkData(500);
+      console.log(nodeList.checkData(500));
+      // nodeList.display();
+    </script>
+  </body>
+</html>
